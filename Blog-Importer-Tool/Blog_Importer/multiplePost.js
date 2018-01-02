@@ -11,7 +11,7 @@ var regExp = new RegExp("\\[\/?(" + fieldName + ".*?)\\]", "g");
 
 
 
-  axios.get('https://api.hubapi.com/content/api/v2/blog-posts?content_group_id=5411147786&access_token=03f89542-ffd4-4450-ab69-348e813df24d', {
+  axios.get(allPosts {
         transformResponse: axios.defaults.transformResponse.concat(function(data, headers) {
             // use data I passed into the function and the objects from the API
             // pass in data into the function using forEach this will return an array
