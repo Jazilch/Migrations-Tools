@@ -1,0 +1,14 @@
+{
+  "name": "Blog_Importer",
+  "version": "1.0.0",
+  "description": "Blog Importer Test",
+  "main": "index.js",
+  "author": "James Zilch",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "devtool": "^2.3.1",
+    "dotenv": "^4.0.0",
+    "filestream": "^4.1.3"
+  }
+}
