@@ -3,8 +3,8 @@ require('dotenv').config({ path: 'variables.env' });
 const axios = require('axios');
 
 const singlePost = 'https://api.hubapi.com/content/api/v2/blog-posts/5411148913?access_token=' + process.env.ACCESS_TOKEN;
-const allPosts =   'https://api.hubapi.com/content/api/v2/blog-posts?access_token=7a3e13f3-921f-440d-8990-d15fa164674a';
-const putURL = 'https://api.hubapi.com/content/api/v2/blog-posts/5411148913?access_token=03f89542-ffd4-4450-ab69-348e813df24d';
+const allPosts =   'https://api.hubapi.com/content/api/v2/blog-posts?access_token=' + process.env.ACCESS_TOKEN;
+const putURL = 'https://api.hubapi.com/content/api/v2/blog-posts/5411148913?access_token=' + process.env.ACCESS_TOKEN;
 
 var fieldName = "et_pb";
 var regExp = new RegExp("\\[\/?(" + fieldName + ".*?)\\]", "g");
