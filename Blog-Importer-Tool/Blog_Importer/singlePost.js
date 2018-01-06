@@ -1,9 +1,24 @@
 'use strict';
 require('dotenv').config({ path: 'variables.env' });
+const yargs = require('yargs');
 const axios = require('axios');
 
-const singlePost = 'https://api.hubapi.com/content/api/v2/blog-posts/5411148913?access_token=' + process.env.ACCESS_TOKEN;
-const putURL = 'https://api.hubapi.com/content/api/v2/blog-posts/5411148913?access_token=' + process.env.ACCESS_TOKEN;
+const argv = yargs
+    .options({
+        p: {
+            demand: true,
+            alias: 'post_id',
+            describe: 'Add a Blog Post ID',
+            string: true
+        }
+})
+    .help()
+    .alias('help', 'h')
+    .argv;
+
+let encodedPostID = encodeURIComponent(argv.post_id);
+const singlePost = `https://api.hubapi.com/content/api/v2/blog-posts/${encodedPostID}?access_token=` + process.env.ACCESS_TOKEN;
+const putURL = `https://api.hubapi.com/content/api/v2/blog-posts/${encodedPostID}?access_token=` + process.env.ACCESS_TOKEN;
 
 var fieldName = "et_pb";
 var regExp = new RegExp("\\[\/?(" + fieldName + ".*?)\\]", "g");
