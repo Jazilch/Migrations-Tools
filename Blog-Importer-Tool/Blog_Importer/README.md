@@ -16,3 +16,12 @@ We created two different files. The first is the Tool for a single Blog Post und
 You will need to change the variable called fieldName for the String you're trying to match from the WordPress markup. 
 
 In order to complete this we use optional paramter called Transform Response. This is an option paramters that you can add to the HTTP Call and after we make a GET request to the API we can change the structure of the returning data before the promise is resolved and we make a PUT Request for the modified data. 
+
+<h2>Command Line Arguments</h2>
+When using the singlePost.js you can now add a command line argument for the Post ID directly into the Command Line. Before you would have had to modify the Node.js file and add in your Post ID from the Post you want to update. With this new addition the only thing you will need to do is type the following into the command line. 
+
+`node singlePost.js -p "Blog_Post_Id"`
+
+We are calling the Node file with node and then we use the -p to tell the Node file we are going to expect an argument of the Post ID taken as a string. 
+
+The file will then take in this argument and run your request as it did before. 
