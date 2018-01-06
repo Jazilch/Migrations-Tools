@@ -12,9 +12,9 @@ var regExp = new RegExp("\\[\/?(" + fieldName + ".*?)\\]", "g");
     // ////////////////////
     axios.get(singlePost, {
         transformResponse: axios.defaults.transformResponse.concat(function(data, headers) {
-            Object.keys(i).forEach(function(k) {
+            Object.keys(data).forEach(function(k) {
                 if( k == "post_body" ) {
-                    data[k] = i[k].replace(regExp, '');
+                    data[k] = data[k].replace(regExp, '');
                 }
             })
             return data;
